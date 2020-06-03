@@ -1,0 +1,128 @@
+
+a, aside, body, dd, div, dl, dt, footer, form, h1, h2, h3, h4, h5, h6, header, html, img, label, li, nav, ol, p, section, span, table, tbody, td, tfoot, th, thead, tr, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline
+}
+
+#app {
+    height: 100%;
+}
+
+.clearfix:after {
+    overflow: hidden;
+    display: block;
+    font-size: 0;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+a, a:hover, a:active, a:visited, a:link, a:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    background: none;
+    text-decoration: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+ul, li, ol li {
+    list-style-type: none;
+}
+
+.of {
+    overflow: hidden;
+}
+
+.rt {
+    float: right;
+}
+
+.lf {
+    float: left;
+}
+
+img {
+    width: 100%;
+    vertical-align: middle !important;
+}
+
+html {
+    font-size: 20px;
+    font-family: PingFangSC-Regular, sans-serif, "Microsoft YaHei", "Hui-iconfont";;
+    font-weight: normal;
+    height: 100%;
+    color: #000;
+    word-break: break-all;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    touch-action: manipulation
+}
+
+
+body.nbody {
+    padding-bottom: 2.5rem;
+    min-height: 88%;
+}
+
+body.nbody {
+    padding-top: 0;
+}
+
+body.gray {
+    background-color: #f5f5f5;
+}
+
+input, textarea, button, select {
+    outline-style: none;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input[type=button], input[type=text], input[type=password], input[type=tel] {
+    -webkit-appearance: none;
+    outline: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+input, textarea, button, select {
+    font-family: PingFangSC-Regular, sans-serif, "Microsoft YaHei";
+    font-size: 20px;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+em, i {
+    font-style: normal;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+table {
+    border-spacing: 0;
+}

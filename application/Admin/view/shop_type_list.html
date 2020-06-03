@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>门店分类</title>
+    <link rel="stylesheet" type="text/css" href="__CSS__/static/jquery.sPage.css">
+<!--    分页样式-->
+    <style>
+        .num{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .demo{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>分类id</th>
+                <th>分类名称</th>
+                <th>图片</th>
+                <th>排序号</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name='shop_t_list.data' id='user'}
+            <tr>
+                <td>{$user.id}</td>
+                <td>{$user.type_name}</td>
+                <td>{$user.photo}</td>
+                <td>{$user.sort}</td>
+                <td><a href="">编辑</a>|<a href="">删除</a></td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+
+<!--        分页调用-->
+        <input id="page_id" type="hidden" value="{:url('Admin/Shops/getShopList','','',URL_BASE)}">
+        <div id="myPage" class="demo"></div>
+    </div>
+</div>
+</body>
+
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="__CSS__/static/jquery.sPage.js"></script>
+<script type="text/javascript">
+
+    //分页调用
+    $(function(){
+        // 示例1
+        $("#myPage").sPage({
+            page:{$shop_t_list.current_page},//当前页码，必填
+            total:{$shop_t_list.total},//数据总条数，必填
+            pageSize:{$shop_t_list.per_page},//每页显示多少条数据，默认10条
+            showTotal:true,//是否显示总条数，默认关闭：false
+            totalTxt:"共{$shop_t_list.total}条",//数据总条数文字描述，{total}为占位符，默认"共{total}条"
+            noData: false,//没有数据时是否显示分页，默认false不显示，true显示第一页
+            showSkip:true,//是否显示跳页，默认关闭：false
+            showPN:true,//是否显示上下翻页，默认开启：true
+            prevPage:"上一页",//上翻页文字描述，默认“上一页”
+            nextPage:"下一页",//下翻页文字描述，默认“下一页”
+            backFun:function(page){
+                //点击分页按钮回调函数，返回当前页码
+                // $("#pNum").text(page);
+                url = $("#page_id").val()+'?page='+page;
+                console.log(url);
+                window.location.href=url;
+
+            }
+        });
+
+        // 后台数据请求示例
+        // ajaxPage(1);
+    });
+</script>
+</html>

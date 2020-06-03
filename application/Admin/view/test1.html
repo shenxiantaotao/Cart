@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-size: 14px;
+            background: #eee;
+            padding-bottom: 60px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            height: 50px;
+        }
+
+        .footer .tab {
+            flex: 1;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 5px 0;
+
+        }
+
+        .icon {
+            display: block;
+        }
+
+        .icon img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer .tab a {
+            display: block;
+            height: 50px;
+            line-height: 20px;
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;  padding: 0;
+            font-size: 14px; font-family: "microsoft yahei",'Arial', 'Verdana','Helvetica', sans-serif;
+        }
+        .bar {
+            position: fixed; top: 0; left: 0; right: 0; /* 决定了搜索框置顶 */
+            height: 44px; padding: 0 10px;
+            background-color: #fff; opacity: 0.8; /* 搜索框半透明效果 */
+            z-index: 10;
+        }
+        .bar form {
+            display: block; padding: 0;margin: 0;
+        }
+        .search-row {
+            position: relative;
+            height: 30px; padding: 7px 0;
+        }
+        .search-row input[type=search] {
+            position: absolute; top: 7px;
+            height: 30px; line-height: 21px; width: 100%; padding: 10px 15px 10px 30px;
+            border: 0; border-radius: 6px; outline: 0; background-color: rgba(0,0,0,0.1);
+            font-size: 16px; text-align: center;
+            z-index: 100;
+        }
+        .search-row .placeholder {
+            position: absolute; top: 2px; left: 0; right: 0;
+            display: inline-block; height: 34px; line-height: 34px;
+            border: 0; border-radius: 6px;
+            font-size: 16px; text-align: center; color: #999;
+            z-index: 1;
+        }
+        .search-row .placeholder .iconfont {
+            display: inline-block; width: 19px; line-height: 24px; padding: 10px 0;
+            font-size: 21px; color: #666;
+        }
+        .search-row .placeholder .text {
+            line-height: 40px;
+            vertical-align: top;
+        }
+        .background img {
+            width: 100%;
+        }
+        .active:before {
+            position: absolute; top: 11px; left: 5px; right: auto;
+            display: block; margin-right: 0;
+            font-size: 21px;
+        }
+        .active input[type=search] {
+            text-align: left
+        }
+        .active .placeholder{
+            display: none
+        }
+    </style>
+</head>
+<body>
+<!-- 搜索框 -->
+<div class="top">
+    <header class="bar">
+        <form name="search" class="search" id="search" action="">
+            <div class="search-row">
+                <input type="search" name="word" id="word">
+                <span class="placeholder "><span class="iconfont icon-sousuo"></span><span class="text">搜索</span></span>
+            </div>
+        </form>
+    </header>
+</div>
+
+
+
+
+<div class="footer">
+    <div class="tab">
+        <a href="javascript:;">
+            <i class="icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 1024 1024%22%3E%3Cpath d%3D%22M898.8 987.2H695.6c-11.6 0-21-9.4-21-21 0-3.1-.3-319.6-.3-322.8v-.2c0-4.2-1.8-8.1-5-10.9-6-5-15.1-4.3-20.2 1.7-.1.1-.2.2-.2.3l-28 33c-12.3 14.5-30.2 22.8-49.2 22.8H452.4c-19 0-37-8.3-49.2-22.8l-28-33c-.1-.1-.2-.2-.2-.3-5.1-6-14.2-6.7-20.2-1.7-3.2 2.7-5.1 6.7-5 10.9v.2c0 13.1.7 319.7.7 322.8 0 5.6-2.2 10.9-6.2 14.8-3.9 3.9-9.3 6.2-14.8 6.2H125.2C87 987.2 56 956.1 56 918V451c0-36.3 14-66.6 43-92.6.3-.2.5-.5.8-.7L462.4 64C480 48.4 500 40.4 520.3 40.8c19.9.3 39.8 8.7 57.3 24.3l348.7 287.8c.2.2.4.3.6.5 21 18.7 43.2 43.3 41 99.2V918c.1 38.1-31 69.2-69.1 69.2zm-182.3-42h182.2c15 0 27.2-12.2 27.2-27.2V452.1v-.9c1.7-40.8-12.7-53.8-26.7-66.3L550.6 97.2c-.2-.2-.4-.4-.6-.5-20.3-18.1-40.5-18.5-60-1-.3.2-.5.4-.8.7L126.7 390C107.1 407.7 98 427.1 98 451v466.9c0 15 12.2 27.2 27.2 27.2h183.2c-.2-70.9-.7-296.8-.7-301.7-.1-16.8 7.2-32.6 20.1-43.4 23.5-19.6 58.6-16.8 78.7 6.1.1.2.3.3.4.5l28.3 33.4c4.3 5 10.5 7.9 17.2 7.9h119.1c6.7 0 12.9-2.9 17.2-7.9l28.3-33.4c.1-.2.3-.3.4-.5 20.1-23 55.2-25.8 78.7-6.1 12.9 10.8 20.2 26.6 20.1 43.3.1 12.2.3 232.1.3 301.9z%22%2F%3E%3C%2Fsvg%3E"/>
+            </i>
+            <span>首页</span>
+        </a>
+    </div>
+    <div class="tab">
+        <a href="javascript:;">
+            <i class="icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 1024 1024%22%3E%3Cpath d%3D%22M898.8 987.2H695.6c-11.6 0-21-9.4-21-21 0-3.1-.3-319.6-.3-322.8v-.2c0-4.2-1.8-8.1-5-10.9-6-5-15.1-4.3-20.2 1.7-.1.1-.2.2-.2.3l-28 33c-12.3 14.5-30.2 22.8-49.2 22.8H452.4c-19 0-37-8.3-49.2-22.8l-28-33c-.1-.1-.2-.2-.2-.3-5.1-6-14.2-6.7-20.2-1.7-3.2 2.7-5.1 6.7-5 10.9v.2c0 13.1.7 319.7.7 322.8 0 5.6-2.2 10.9-6.2 14.8-3.9 3.9-9.3 6.2-14.8 6.2H125.2C87 987.2 56 956.1 56 918V451c0-36.3 14-66.6 43-92.6.3-.2.5-.5.8-.7L462.4 64C480 48.4 500 40.4 520.3 40.8c19.9.3 39.8 8.7 57.3 24.3l348.7 287.8c.2.2.4.3.6.5 21 18.7 43.2 43.3 41 99.2V918c.1 38.1-31 69.2-69.1 69.2zm-182.3-42h182.2c15 0 27.2-12.2 27.2-27.2V452.1v-.9c1.7-40.8-12.7-53.8-26.7-66.3L550.6 97.2c-.2-.2-.4-.4-.6-.5-20.3-18.1-40.5-18.5-60-1-.3.2-.5.4-.8.7L126.7 390C107.1 407.7 98 427.1 98 451v466.9c0 15 12.2 27.2 27.2 27.2h183.2c-.2-70.9-.7-296.8-.7-301.7-.1-16.8 7.2-32.6 20.1-43.4 23.5-19.6 58.6-16.8 78.7 6.1.1.2.3.3.4.5l28.3 33.4c4.3 5 10.5 7.9 17.2 7.9h119.1c6.7 0 12.9-2.9 17.2-7.9l28.3-33.4c.1-.2.3-.3.4-.5 20.1-23 55.2-25.8 78.7-6.1 12.9 10.8 20.2 26.6 20.1 43.3.1 12.2.3 232.1.3 301.9z%22%2F%3E%3C%2Fsvg%3E"/>
+            </i>
+            <span>导航</span>
+
+        </a>
+    </div>
+    <div class="tab">
+        <a href="javascript:;">
+            <i class="icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 1024 1024%22%3E%3Cpath d%3D%22M898.8 987.2H695.6c-11.6 0-21-9.4-21-21 0-3.1-.3-319.6-.3-322.8v-.2c0-4.2-1.8-8.1-5-10.9-6-5-15.1-4.3-20.2 1.7-.1.1-.2.2-.2.3l-28 33c-12.3 14.5-30.2 22.8-49.2 22.8H452.4c-19 0-37-8.3-49.2-22.8l-28-33c-.1-.1-.2-.2-.2-.3-5.1-6-14.2-6.7-20.2-1.7-3.2 2.7-5.1 6.7-5 10.9v.2c0 13.1.7 319.7.7 322.8 0 5.6-2.2 10.9-6.2 14.8-3.9 3.9-9.3 6.2-14.8 6.2H125.2C87 987.2 56 956.1 56 918V451c0-36.3 14-66.6 43-92.6.3-.2.5-.5.8-.7L462.4 64C480 48.4 500 40.4 520.3 40.8c19.9.3 39.8 8.7 57.3 24.3l348.7 287.8c.2.2.4.3.6.5 21 18.7 43.2 43.3 41 99.2V918c.1 38.1-31 69.2-69.1 69.2zm-182.3-42h182.2c15 0 27.2-12.2 27.2-27.2V452.1v-.9c1.7-40.8-12.7-53.8-26.7-66.3L550.6 97.2c-.2-.2-.4-.4-.6-.5-20.3-18.1-40.5-18.5-60-1-.3.2-.5.4-.8.7L126.7 390C107.1 407.7 98 427.1 98 451v466.9c0 15 12.2 27.2 27.2 27.2h183.2c-.2-70.9-.7-296.8-.7-301.7-.1-16.8 7.2-32.6 20.1-43.4 23.5-19.6 58.6-16.8 78.7 6.1.1.2.3.3.4.5l28.3 33.4c4.3 5 10.5 7.9 17.2 7.9h119.1c6.7 0 12.9-2.9 17.2-7.9l28.3-33.4c.1-.2.3-.3.4-.5 20.1-23 55.2-25.8 78.7-6.1 12.9 10.8 20.2 26.6 20.1 43.3.1 12.2.3 232.1.3 301.9z%22%2F%3E%3C%2Fsvg%3E"/>
+            </i>
+            <span>我的</span>
+        </a>
+    </div>
+    <div class="tab">
+        <a href="javascript:;">
+            <i class="icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 1024 1024%22%3E%3Cpath d%3D%22M898.8 987.2H695.6c-11.6 0-21-9.4-21-21 0-3.1-.3-319.6-.3-322.8v-.2c0-4.2-1.8-8.1-5-10.9-6-5-15.1-4.3-20.2 1.7-.1.1-.2.2-.2.3l-28 33c-12.3 14.5-30.2 22.8-49.2 22.8H452.4c-19 0-37-8.3-49.2-22.8l-28-33c-.1-.1-.2-.2-.2-.3-5.1-6-14.2-6.7-20.2-1.7-3.2 2.7-5.1 6.7-5 10.9v.2c0 13.1.7 319.7.7 322.8 0 5.6-2.2 10.9-6.2 14.8-3.9 3.9-9.3 6.2-14.8 6.2H125.2C87 987.2 56 956.1 56 918V451c0-36.3 14-66.6 43-92.6.3-.2.5-.5.8-.7L462.4 64C480 48.4 500 40.4 520.3 40.8c19.9.3 39.8 8.7 57.3 24.3l348.7 287.8c.2.2.4.3.6.5 21 18.7 43.2 43.3 41 99.2V918c.1 38.1-31 69.2-69.1 69.2zm-182.3-42h182.2c15 0 27.2-12.2 27.2-27.2V452.1v-.9c1.7-40.8-12.7-53.8-26.7-66.3L550.6 97.2c-.2-.2-.4-.4-.6-.5-20.3-18.1-40.5-18.5-60-1-.3.2-.5.4-.8.7L126.7 390C107.1 407.7 98 427.1 98 451v466.9c0 15 12.2 27.2 27.2 27.2h183.2c-.2-70.9-.7-296.8-.7-301.7-.1-16.8 7.2-32.6 20.1-43.4 23.5-19.6 58.6-16.8 78.7 6.1.1.2.3.3.4.5l28.3 33.4c4.3 5 10.5 7.9 17.2 7.9h119.1c6.7 0 12.9-2.9 17.2-7.9l28.3-33.4c.1-.2.3-.3.4-.5 20.1-23 55.2-25.8 78.7-6.1 12.9 10.8 20.2 26.6 20.1 43.3.1 12.2.3 232.1.3 301.9z%22%2F%3E%3C%2Fsvg%3E"/>
+            </i>
+            <span>中心</span>
+        </a>
+    </div>
+</div>
+</body>
+</html>
